@@ -1,0 +1,25 @@
+# Flutter / Dart rác từ các project con
+**/build/
+**/.dart_tool/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.packages
+**/.pub-cache/
+**/.pub/
+
+# Android & iOS build artifacts
+**/android/.gradle/
+**/android/local.properties
+**/android/app/build/
+**/ios/.symlinks/
+**/ios/Pods/
+**/ios/.generated/
+
+# IDE files
+**/.idea/
+**/.vscode/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
