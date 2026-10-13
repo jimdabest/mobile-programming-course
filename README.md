@@ -4,10 +4,12 @@
 * **MSSV:** 082206016362
 * **Trường:** Đại học Giao thông vận tải TP.HCM (UTH)
 
+
 ## Bảng theo dõi tiến độ
 - [x] **Tuần 01:** [Bài tập Tuần 1](week-01/)
   - Màn hình thông tin cá nhân (Profile Screen UI)
   - Trả lời các câu hỏi lý thuyết tuần 1
+
 
 - [x] **Tuần 02:** [Bài tập Tuần 2](week-02/)
   - `ex00_calculator`: Thực hành 03 - Máy tính bỏ túi đơn vị xử lý trạng thái (StatefulWidget & TextField)
