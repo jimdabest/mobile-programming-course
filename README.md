@@ -16,3 +16,9 @@
   - `ex01_student_list`: Bài 1 - Danh sách sinh viên (Vòng lặp `for` & kiểu `nullable`)
   - `ex02_grade_classification`: Bài 2 - Xếp loại học lực (Cấu trúc rẽ nhánh `if / else`)
   - `ex03_grade_board`: Bài 3 - Bảng điểm lớp tổng hợp (`for` + `if` + `nullable`)
+- [x] **Tuần 03:** [Bài tập Tuần 3](week-03/)
+  - `ex01_basic_ui`: Thực hành 01 - Các thành phần UI cơ bản và xử lý sự kiện Button (Flutter)
+  - `ex02_jetpack_compose_ui`: Thực hành 02 - Màn hình chào mừng "I'm ready" (Jetpack Compose)
+
+- [x] **Tuần 04:** [Bài tập Tuần 4](week-04/)
+  - `ex01_ui_components`: Bài 01 - Ứng dụng hiển thị đầy đủ các thành phần UI cơ bản & Navigation (Kotlin + Jetpack Compose)
