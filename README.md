@@ -22,3 +22,17 @@
 
 - [x] **Tuần 04:** [Bài tập Tuần 4](week-04/)
   - `ex01_ui_components`: Bài 01 - Ứng dụng hiển thị đầy đủ các thành phần UI cơ bản & Navigation (Kotlin + Jetpack Compose)
+  - `ex02_navigation_lazycolumn`: Thực hành Navigation + LazyColumn — Root → List&lt;Lazy&gt; → Detail
+  
+
+## Đồ án xuyên suốt: UTH Todo App
+
+- **Thư mục dự án:** [`uth_todo/`](uth_todo/)
+- **Mô tả:** Ứng dụng quản lý công việc cá nhân, hỗ trợ phân loại học tập/cuộc sống và nhắc nhở đúng lúc. Ứng dụng được phát triển xuyên suốt học kỳ.
+- **Tiến độ hiện tại:**
+  - [x] Khởi tạo dự án với Jetpack Compose.
+  - [x] **Bài tập về nhà 01:** Xây dựng màn hình Start (Splash) và luồng Onboarding 3 bước.
+  - [x] Áp dụng tư duy OOP tạo Data Model (`OnboardingPage`) tái sử dụng UI.
+  - [x] Tích hợp Jetpack Navigation Compose để chuyển đổi mượt mà giữa Start và Onboarding.
+
+---
