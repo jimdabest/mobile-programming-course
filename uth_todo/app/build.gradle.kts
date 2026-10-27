@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -53,4 +54,9 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     implementation("androidx.navigation:navigation-compose:2.8.0")
     implementation("androidx.compose.material:material-icons-extended:1.6.8")
+    // Khai báo Firebase Bill of Materials (BoM) để quản lý phiên bản tự động
+    implementation(platform("com.google.firebase:firebase-bom:32.8.0"))
+    // Thêm thư viện Firebase Authentication
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.android.gms:play-services-auth:21.1.1")
 }

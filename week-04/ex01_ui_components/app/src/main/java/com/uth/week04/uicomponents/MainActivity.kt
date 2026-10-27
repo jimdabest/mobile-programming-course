@@ -197,31 +197,6 @@ fun ComponentListScreen(navController: NavController) {
                 navController.navigate(Screen.RowLayoutDetail.route)
             }
 
-            // Nút Tự tìm hiểu màu đỏ hồng
-            Spacer(modifier = Modifier.height(14.dp))
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(Color(0xFFFFCCCC), shape = RoundedCornerShape(10.dp))
-                    .clickable { navController.navigate(Screen.SelfResearchDetail.route) }
-                    .padding(horizontal = 16.dp, vertical = 12.dp)
-            ) {
-                Column {
-                    Text(
-                        text = "Tự tìm hiểu",
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 14.sp,
-                        color = Color(0xFF1E293B)
-                    )
-                    Spacer(modifier = Modifier.height(2.dp))
-                    Text(
-                        text = "Tìm ra tất cả các thành phần UI Cơ bản",
-                        fontSize = 12.sp,
-                        color = Color(0xFF334155)
-                    )
-                }
-            }
-            Spacer(modifier = Modifier.height(24.dp))
         }
     }
 }
@@ -236,12 +211,12 @@ fun TextDetailScreen(navController: NavController) {
             modifier = Modifier
                 .fillMaxSize()
                 .padding(24.dp),
-            contentAlignment = Alignment.CenterStart
+            contentAlignment = Alignment.TopEnd
         ) {
             val styledText = buildAnnotatedString {
                 withStyle(style = SpanStyle(fontSize = 30.sp, color = Color.Black)) { append("The ") }
                 withStyle(style = SpanStyle(fontSize = 30.sp, textDecoration = TextDecoration.LineThrough, color = Color.Black)) { append("quick") }
-                withStyle(style = SpanStyle(fontSize = 36.sp, fontWeight = FontWeight.Bold, color = Color(0xFFC27838))) { append(" Brown\n") }
+                withStyle(style = SpanStyle(fontSize = 36.sp, fontWeight = FontWeight.Bold, color = Color(0xFFFF0000))) { append(" Brown\n") }
                 withStyle(style = SpanStyle(fontSize = 30.sp, color = Color.Black)) { append("fox ") }
                 withStyle(style = SpanStyle(fontSize = 30.sp, letterSpacing = 6.sp, color = Color.Black)) { append("jumps ") }
                 withStyle(style = SpanStyle(fontSize = 30.sp, fontWeight = FontWeight.Bold, fontStyle = FontStyle.Italic, color = Color.Black)) { append("over\n") }

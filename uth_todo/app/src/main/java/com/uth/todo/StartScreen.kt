@@ -94,6 +94,5 @@ fun StartScreen(onTimeout: () -> Unit) {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun StartScreenPreview() {
-    // Đã xóa UTHTodoTheme để tránh lỗi, chỉ gọi thẳng StartScreen để xem trước
     StartScreen(onTimeout = {})
 }
