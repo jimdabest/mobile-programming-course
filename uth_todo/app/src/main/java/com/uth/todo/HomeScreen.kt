@@ -36,6 +36,8 @@ import com.google.firebase.auth.FirebaseAuth
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import coil.compose.AsyncImage
+import androidx.compose.ui.layout.ContentScale
 
 @Composable
 fun HomeScreen(navController: NavController) {
@@ -46,6 +48,7 @@ fun HomeScreen(navController: NavController) {
         null
     }
     val fullName = user?.displayName ?: "Acc Clone"
+    val photoUrl = user?.photoUrl
     val avatarLetters = fullName.split(" ").mapNotNull { it.firstOrNull()?.uppercase() }.take(2).joinToString("")
     val currentDate = SimpleDateFormat("EEEE, dd 'tháng' MM", Locale("vi", "VN")).format(Date())
 
@@ -81,13 +84,29 @@ fun HomeScreen(navController: NavController) {
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Box(
-                    modifier = Modifier
-                        .size(48.dp)
-                        .background(Color(0xFFDBEAFE), CircleShape),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(text = avatarLetters, fontWeight = FontWeight.Bold, color = Color(0xFF1E3A8A), fontSize = 16.sp)
+                if (photoUrl != null) {
+                    // Nếu có ảnh từ Google thì hiển thị ảnh
+                    AsyncImage(
+                        model = photoUrl,
+                        contentDescription = "Avatar",
+                        contentScale = ContentScale.Crop, // Cắt ảnh cho vừa hình tròn
+                        modifier = Modifier
+                            .size(48.dp)
+                            .clip(CircleShape)
+                            .clickable { navController.navigate("profile_screen") }
+                    )
+                } else {
+                    // Dự phòng: Nếu đăng nhập bằng Email không có ảnh thì hiển thị chữ cái đầu
+                    Box(
+                        modifier = Modifier
+                            .size(48.dp)
+                            .background(Color(0xFFDBEAFE), CircleShape)
+                            .clip(CircleShape)
+                            .clickable { navController.navigate("profile_screen") },
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(text = avatarLetters, fontWeight = FontWeight.Bold, color = Color(0xFF1E3A8A), fontSize = 16.sp)
+                    }
                 }
                 Spacer(modifier = Modifier.width(12.dp))
                 Column(modifier = Modifier.weight(1f)) {

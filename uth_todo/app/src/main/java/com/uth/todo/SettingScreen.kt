@@ -15,6 +15,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.text.font.FontWeight
@@ -24,6 +25,8 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.google.firebase.auth.FirebaseAuth
+import coil.compose.AsyncImage
+import androidx.compose.ui.layout.ContentScale
 
 @Composable
 fun SettingScreen(navController: NavController) {
@@ -33,6 +36,7 @@ fun SettingScreen(navController: NavController) {
         try { FirebaseAuth.getInstance().currentUser } catch (e: Exception) { null }
     }
 
+    val photoUrl = user?.photoUrl
     val fullName = user?.displayName ?: "Acc Clone"
     val userEmail = user?.email ?: "clone@example.com"
     val avatarLetters = fullName.split(" ").mapNotNull { it.firstOrNull()?.uppercase() }.take(2).joinToString("")
@@ -70,13 +74,24 @@ fun SettingScreen(navController: NavController) {
         Spacer(modifier = Modifier.height(32.dp))
 
         // --- AVATAR & THÔNG TIN ---
-        Box(
-            modifier = Modifier
-                .size(88.dp)
-                .background(Color(0xFFEEF2FF), CircleShape),
-            contentAlignment = Alignment.Center
-        ) {
-            Text(text = avatarLetters, fontSize = 32.sp, fontWeight = FontWeight.ExtraBold, color = Color(0xFF4361EE))
+        if (photoUrl != null) {
+            AsyncImage(
+                model = photoUrl,
+                contentDescription = "Avatar",
+                contentScale = ContentScale.Crop,
+                modifier = Modifier
+                    .size(88.dp) // Kích thước to hơn so với trang Home
+                    .clip(CircleShape)
+            )
+        } else {
+            Box(
+                modifier = Modifier
+                    .size(88.dp)
+                    .background(Color(0xFFEEF2FF), CircleShape),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(text = avatarLetters, fontSize = 32.sp, fontWeight = FontWeight.ExtraBold, color = Color(0xFF4361EE))
+            }
         }
 
         Spacer(modifier = Modifier.height(16.dp))
