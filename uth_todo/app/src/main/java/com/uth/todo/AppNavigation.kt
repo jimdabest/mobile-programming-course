@@ -25,5 +25,11 @@ fun AppNavigation() {
         composable("login_screen") {
             LoginScreen(navController = navController)
         }
+        composable("home_screen") {
+            HomeScreen(navController = navController)
+        }
+        composable("profile_screen") {
+            SettingScreen(navController = navController)
+        }
     }
 }

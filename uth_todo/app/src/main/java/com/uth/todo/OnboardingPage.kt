@@ -83,7 +83,7 @@ fun OnboardingScreen(
             contentAlignment = Alignment.Center
         ) {
             Box(
-                modifier = Modifier.fillMaxWidth(0.85f).fillMaxHeight().background(Color(0xFFF1F5F9), shape = RoundedCornerShape(24.dp)),
+                modifier = Modifier.fillMaxWidth(0.6f).fillMaxHeight(0.4f).background(Color(0xFFF1F5F9), shape = RoundedCornerShape(24.dp)),
                 contentAlignment = Alignment.Center
             ) {
                 when (page.stepIndex) {

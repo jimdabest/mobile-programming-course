@@ -9,7 +9,8 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 
 class AuthManager {
-    private val auth: FirebaseAuth = FirebaseAuth.getInstance()
+    private val auth: FirebaseAuth
+        get() = FirebaseAuth.getInstance()
 
     fun getCurrentUser(): FirebaseUser? = auth.currentUser
 
